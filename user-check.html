@@ -12,12 +12,23 @@
     <div id="app">
         <!-- ID é usado apenas como um identificador -->
         <h1>{{title}}</h1>
+        <div class="info-user" v-if=" user == 1">
+            Name : {{user.name}}<br> Profission : {{user.profission}} <br>
+        </div>
+        <div class="nothing__user" v-else="user == 1">
+            <p>Not found users </p>
+        </div>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
         var app = new Vue({
             el: "#app",
             data: {
+                user: {
+                    id: 2,
+                    name: "Joe Doe",
+                    profission: "Developer"
+                },
                 title: "Ninja Mode on Vue JS"
             }
         })
